@@ -1,64 +1,117 @@
-// 1 Definimos una interfaz llamada Personaje (Polimorfismo de Subtipos)
-interface Personaje {
-    interactuarEntorno(): void;
-}
+// Polimorfismo de Subtipos
 
-// 1aImplementación para el héroe
-class Heroe implements Personaje {
-    interactuarEntorno(): void {
-        console.log("El héroe interactúa con el entorno de manera valiente.");
+// Definimos una clase base llamada Personaje ( EJEMPLO DE VIDEOJUEGO)
+class Personaje {
+    // Método para recibir daño
+    recibirDanio() {
+        console.log("¡Ouch! El personaje recibió daño.");
+    }
+
+    // Método para ser curado
+    serCurado() {
+        console.log("¡Se siente mejor! El personaje fue curado.");
     }
 }
 
-//  1b Implementación para el aventurero
-class Aventurero implements Personaje {
-    interactuarEntorno(): void {
-        console.log("El aventurero explora el entorno con astucia.");
+// Definimos una subclase llamada Heroe que extiende de Personaje
+class Heroe extends Personaje {
+    // Método para usar una habilidad especial
+    usarHabilidadEspecial() {
+        console.log("¡El héroe usó su habilidad especial!");
     }
 }
 
-// 3 Función polimórfica que trabaja con cualquier tipo de personaje (Polimorfismo de Subtipos)
-function interactuarConPersonaje(personaje: Personaje): void {
-    personaje.interactuarEntorno();
-}
+// Creamos una instancia de Heroe y llamamos a sus métodos
+const miHeroe = new Heroe();
+miHeroe.recibirDanio();
+miHeroe.serCurado();
 
-// 4 Función que utiliza el polimorfismo paramétrico para trabajar con diferentes tipos de datos (Polimorfismo Paramétrico)
-function mostrarMensaje<T>(mensaje: T): void {
-    console.log("Mensaje: " + mensaje);
-}
+// Polimorfismo Paramétrico
 
-// 5 Función que utiliza el polimorfismo ad hoc para comportarse de manera diferente según los tipos de datos (Polimorfismo Ad Hoc)
-function multiplicar(a: number, b: number): number;
-function multiplicar(a: string, b: number): string;
-function multiplicar(a: any, b: number): any {
-    if (typeof a === 'number') {
-        return a * b;
-    } else if (typeof a === 'string' && !isNaN(parseInt(a))) {
-        return parseInt(a) * b;
-    } else {
-        return "No se puede multiplicar";
+// Definimos una función genérica llamada imprimirElementos (EJEMPLO DE TODO LIST)
+function imprimirElementos<T>(elementos: T[]): void {
+    // Iteramos sobre los elementos y los imprimimos
+    for (let elemento of elementos) {
+        console.log(elemento);
     }
 }
 
-// Creación de instancias de personajes
-const heroe = new Heroe();
-const aventurero = new Aventurero();
+// Creamos algunos arreglos de diferentes tipos
+const tareas: string[] = ["Hacer la compra", "Llamar al doctor", "Enviar correo"];
+const numeros: number[] = [1, 2, 3, 4, 5];
 
-// Uso de la función que trabaja con cualquier tipo de personaje (Polimorfismo de Subtipos)
-interactuarConPersonaje(heroe);        // Salida: El héroe interactúa con el entorno de manera valiente.
-interactuarConPersonaje(aventurero);    // Salida: El aventurero explora el entorno con astucia.
+// Llamamos a la función imprimirElementos con diferentes tipos de arreglos
+imprimirElementos(tareas);
+imprimirElementos(numeros);
 
-// Uso de la función que utiliza polimorfismo paramétrico (Polimorfismo Paramétrico)
-mostrarMensaje("Hola Coders, gracias por su atencion");  // Salida: Mensaje: Hola Coders, gracias por su atencion.
-mostrarMensaje(42);                              // Salida: Mensaje: 42
-mostrarMensaje("Frontend, Backend ? WEEKEND!!!");   // Aquí T será inferido como string
-mostrarMensaje(28.571);       // Aquí T será inferido como number
-mostrarMensaje(true);     // Aquí T será inferido como boolean
+// Polimorfismo Ad Hoc
 
-// Uso de la función que utiliza polimorfismo ad hoc (Polimorfismo Ad Hoc)
-console.log(multiplicar(5, 2));    // Salida: 10
-console.log(multiplicar("5", 2));  // Salida: 10
-console.log(multiplicar("abc", 2));// Salida: No se puede multiplicar
+// Definimos una función calcularValor que suma los precios de una lista de productos
+function calcularValor(productos: { nombre: string, precio: number }[]): number {
+    let total = 0;
+    // Iteramos sobre los productos y sumamos sus precios
+    for (let producto of productos) {
+        total += producto.precio;
+    }
+    return total;
+}
 
+// Creamos algunos arreglos de diferentes tipos de productos
+const electrodomesticos = [{ nombre: "Nevera", precio: 800 }, { nombre: "Televisor", precio: 600 }];
+const muebles = [{ nombre: "Sofá", precio: 500 }, { nombre: "Mesa", precio: 300 }];
+const electronicos = [{ nombre: "Teléfono", precio: 400 }, { nombre: "Tablet", precio: 300 }];
 
+// Calculamos el valor total de cada tipo de producto
+console.log("Valor total de los electrodomésticos:", calcularValor(electrodomesticos));
+console.log("Valor total de los muebles:", calcularValor(muebles));
+console.log("Valor total de los electrónicos:", calcularValor(electronicos));
+
+// Polimorfismo de Inclusión de Interfaces
+
+// Definimos una interfaz Empleado con métodos comunes
+interface Empleado {
+    calcularSalario(): number;
+    imprimirDetalle(): void;
+}
+
+// Implementamos la interfaz para diferentes tipos de empleados
+class EmpleadoTiempoCompleto implements Empleado {
+    calcularSalario() {
+        return 2000;
+    }
+
+    imprimirDetalle() {
+        console.log("Empleado a tiempo completo");
+    }
+}
+
+class EmpleadoMedioTiempo implements Empleado {
+    calcularSalario() {
+        return 1000;
+    }
+
+    imprimirDetalle() {
+        console.log("Empleado a medio tiempo");
+    }
+}
+
+class Consultor implements Empleado {
+    calcularSalario() {
+        return 50; // Tarifa por hora
+    }
+
+    imprimirDetalle() {
+        console.log("Consultor independiente");
+    }
+}
+
+// Creamos instancias de diferentes tipos de empleados
+const empleadoCompleto = new EmpleadoTiempoCompleto();
+const empleadoMedioTiempo = new EmpleadoMedioTiempo();
+const consultor = new Consultor();
+
+// Llamamos a los métodos de cada tipo de empleado
+console.log("Salario del empleado a tiempo completo:", empleadoCompleto.calcularSalario());
+console.log("Salario del empleado a medio tiempo:", empleadoMedioTiempo.calcularSalario());
+console.log("Honorarios del consultor:", consultor.calcularSalario());
 
