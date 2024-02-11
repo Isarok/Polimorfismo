@@ -1,12 +1,10 @@
 1. Instala TypeScript globalmente usando npm (Node Package Manager), si aún no lo tienes instalado. Puedes hacerlo ejecutando el siguiente comando en tu terminal:
-   
+
    ```
    npm install -g typescript
    ```
 
-2. Crea un archivo llamado `polimorfismo.ts` y copia el código TypeScript proporcionado anteriormente en ese archivo.
-
-3. Abre una terminal, navega hasta la ubicación donde guardaste el archivo `polimorfismo.ts` y ejecuta el siguiente comando para compilar el código TypeScript:
+2. Abre una terminal, navega hasta la ubicación donde guardaste el archivo `polimorfismo.ts` y ejecuta el siguiente comando para compilar el código TypeScript:
 
    ```
    tsc polimorfismo.ts
@@ -14,7 +12,7 @@
 
    Esto generará un archivo JavaScript llamado `polimorfismo.js`.
 
-4. Una vez que hayas compilado con éxito el código TypeScript, puedes ejecutar el archivo JavaScript usando Node.js. En la terminal, ejecuta el siguiente comando:
+3. Una vez que hayas compilado con éxito el código TypeScript, puedes ejecutar el archivo JavaScript usando Node.js. En la terminal, ejecuta el siguiente comando:
 
    ```
    node polimorfismo.js
