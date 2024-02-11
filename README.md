@@ -6,13 +6,16 @@
 
 2. Abre una terminal, navega hasta la ubicación donde guardaste el archivo `polimorfismo.ts` y ejecuta el siguiente comando para compilar el código TypeScript:
 
+3. Abre una terminal, navega hasta la ubicación donde guardaste el archivo `polimorfismo.ts` y ejecuta el siguiente comando para compilar el código TypeScript:
+
    ```
    tsc polimorfismo.ts
    ```
 
    Esto generará un archivo JavaScript llamado `polimorfismo.js`.
 
-3. Una vez que hayas compilado con éxito el código TypeScript, puedes ejecutar el archivo JavaScript usando Node.js. En la terminal, ejecuta el siguiente comando:
+4. Una vez que hayas compilado con éxito el código TypeScript, puedes ejecutar el archivo JavaScript usando Node.js. En la terminal, ejecuta el siguiente comando:
+5. Una vez que hayas compilado con éxito el código TypeScript, puedes ejecutar el archivo JavaScript usando Node.js. En la terminal, ejecuta el siguiente comando:
 
    ```
    node polimorfismo.js
