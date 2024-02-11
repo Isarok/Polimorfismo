@@ -1,117 +1,116 @@
-// Polimorfismo de Subtipos
+// Polymorphism of Subtypes
 
-// Definimos una clase base llamada Personaje ( EJEMPLO DE VIDEOJUEGO)
-class Personaje {
-    // Método para recibir daño
-    recibirDanio() {
-        console.log("¡Ouch! El personaje recibió daño.");
+// We define a base class called Character
+class Character {
+    // Method to take damage
+    receiveDamage() {
+        console.log("Ouch! The character received damage.");
     }
 
-    // Método para ser curado
-    serCurado() {
-        console.log("¡Se siente mejor! El personaje fue curado.");
-    }
-}
-
-// Definimos una subclase llamada Heroe que extiende de Personaje
-class Heroe extends Personaje {
-    // Método para usar una habilidad especial
-    usarHabilidadEspecial() {
-        console.log("¡El héroe usó su habilidad especial!");
+    // Method to be healed
+    beHealed() {
+        console.log("Feeling better! The character was healed.");
     }
 }
 
-// Creamos una instancia de Heroe y llamamos a sus métodos
-const miHeroe = new Heroe();
-miHeroe.recibirDanio();
-miHeroe.serCurado();
-
-// Polimorfismo Paramétrico
-
-// Definimos una función genérica llamada imprimirElementos (EJEMPLO DE TODO LIST)
-function imprimirElementos<T>(elementos: T[]): void {
-    // Iteramos sobre los elementos y los imprimimos
-    for (let elemento of elementos) {
-        console.log(elemento);
+// We define a subclass called Hero that extends Character
+class Hero extends Character {
+    // Method to use a special ability
+    useSpecialAbility() {
+        console.log("The hero used their special ability!");
     }
 }
 
-// Creamos algunos arreglos de diferentes tipos
-const tareas: string[] = ["Hacer la compra", "Llamar al doctor", "Enviar correo"];
-const numeros: number[] = [1, 2, 3, 4, 5];
+// We create an instance of Hero and call its methods
+const myHero = new Hero();
+myHero.receiveDamage();
+myHero.beHealed();
 
-// Llamamos a la función imprimirElementos con diferentes tipos de arreglos
-imprimirElementos(tareas);
-imprimirElementos(numeros);
+// Parametric Polymorphism
 
-// Polimorfismo Ad Hoc
+// We define a generic function called printElements
+function printElements<T>(elements: T[]): void {
+    // We iterate over the elements and print them
+    for (let element of elements) {
+        console.log(element);
+    }
+}
 
-// Definimos una función calcularValor que suma los precios de una lista de productos
-function calcularValor(productos: { nombre: string, precio: number }[]): number {
+// We create some arrays of different types
+const tasks: string[] = ["Buy groceries", "Call the doctor", "Send an email"];
+const numbers: number[] = [1, 2, 3, 4, 5];
+
+// We call the printElements function with different types of arrays
+printElements(tasks);
+printElements(numbers);
+
+// Ad Hoc Polymorphism
+
+// We define a function called calculateValue that sums the prices of a list of products
+function calculateValue(products: { name: string, price: number }[]): number {
     let total = 0;
-    // Iteramos sobre los productos y sumamos sus precios
-    for (let producto of productos) {
-        total += producto.precio;
+    // We iterate over the products and sum their prices
+    for (let product of products) {
+        total += product.price;
     }
     return total;
 }
 
-// Creamos algunos arreglos de diferentes tipos de productos
-const electrodomesticos = [{ nombre: "Nevera", precio: 800 }, { nombre: "Televisor", precio: 600 }];
-const muebles = [{ nombre: "Sofá", precio: 500 }, { nombre: "Mesa", precio: 300 }];
-const electronicos = [{ nombre: "Teléfono", precio: 400 }, { nombre: "Tablet", precio: 300 }];
+// We create some arrays of different types of products
+const appliances = [{ name: "Refrigerator", price: 800 }, { name: "Television", price: 600 }];
+const furniture = [{ name: "Sofa", price: 500 }, { name: "Table", price: 300 }];
+const electronics = [{ name: "Phone", price: 400 }, { name: "Tablet", price: 300 }];
 
-// Calculamos el valor total de cada tipo de producto
-console.log("Valor total de los electrodomésticos:", calcularValor(electrodomesticos));
-console.log("Valor total de los muebles:", calcularValor(muebles));
-console.log("Valor total de los electrónicos:", calcularValor(electronicos));
+// We calculate the total value of each type of product
+console.log("Total value of appliances:", calculateValue(appliances));
+console.log("Total value of furniture:", calculateValue(furniture));
+console.log("Total value of electronics:", calculateValue(electronics));
 
-// Polimorfismo de Inclusión de Interfaces
+// Interface Inclusion Polymorphism
 
-// Definimos una interfaz Empleado con métodos comunes
-interface Empleado {
-    calcularSalario(): number;
-    imprimirDetalle(): void;
+// We define an interface called Employee with common methods
+interface Employee {
+    calculateSalary(): number;
+    printDetails(): void;
 }
 
-// Implementamos la interfaz para diferentes tipos de empleados
-class EmpleadoTiempoCompleto implements Empleado {
-    calcularSalario() {
+// We implement the interface for different types of employees
+class FullTimeEmployee implements Employee {
+    calculateSalary() {
         return 2000;
     }
 
-    imprimirDetalle() {
-        console.log("Empleado a tiempo completo");
+    printDetails() {
+        console.log("Full-time employee");
     }
 }
 
-class EmpleadoMedioTiempo implements Empleado {
-    calcularSalario() {
+class PartTimeEmployee implements Employee {
+    calculateSalary() {
         return 1000;
     }
 
-    imprimirDetalle() {
-        console.log("Empleado a medio tiempo");
+    printDetails() {
+        console.log("Part-time employee");
     }
 }
 
-class Consultor implements Empleado {
-    calcularSalario() {
-        return 50; // Tarifa por hora
+class Consultant implements Employee {
+    calculateSalary() {
+        return 50; // Hourly rate
     }
 
-    imprimirDetalle() {
-        console.log("Consultor independiente");
+    printDetails() {
+        console.log("Independent consultant");
     }
 }
 
-// Creamos instancias de diferentes tipos de empleados
-const empleadoCompleto = new EmpleadoTiempoCompleto();
-const empleadoMedioTiempo = new EmpleadoMedioTiempo();
-const consultor = new Consultor();
+// We create instances of different types of employees
+const fullTimeEmployee = new FullTimeEmployee();
+const partTimeEmployee = new PartTimeEmployee();
+const consultant = new Consultant();
 
-// Llamamos a los métodos de cada tipo de empleado
-console.log("Salario del empleado a tiempo completo:", empleadoCompleto.calcularSalario());
-console.log("Salario del empleado a medio tiempo:", empleadoMedioTiempo.calcularSalario());
-console.log("Honorarios del consultor:", consultor.calcularSalario());
-
+// We call the methods of each type of employee
+console.log("Salary of full-time employee:", fullTimeEmployee.calculateSalary());
+console.log("Salary of part-time employee:", partTimeEmployee.calculateSalary());
+console.log("Fees of consultant:", consultant.calculateSalary());
