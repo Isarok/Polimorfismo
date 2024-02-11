@@ -1,38 +1,50 @@
 # Instrucciones para Ejecutar el Código en Terminal
 
-Este repositorio contiene un ejemplo de código TypeScript que demuestra diferentes tipos de polimorfismo: polimorfismo de subtipos, polimorfismo paramétrico, polimorfismo ad hoc y polimorfismo de inclusión de interfaces.
+Este repositorio contiene un ejemplo de código TypeScript que demuestra diferentes tipos de polimorfismo, tales como:
+
+- Polimorfismo de subtipos
+- Polimorfismo paramétrico
+- Polimorfismo ad hoc
+- Polimorfismo de inclusión de interfaces
 
 ## Requisitos
 
-- Node.js instalado en tu sistema. Puedes descargarlo desde [aquí](https://nodejs.org/).
+Antes de ejecutar el código, asegúrate de tener lo siguiente instalado en tu sistema:
+
+- [Node.js](https://nodejs.org/): Plataforma de ejecución de JavaScript. Puedes descargarlo desde [aquí](https://nodejs.org/).
 
 ## Pasos para Ejecutar el Código
 
-1. Clona este repositorio en tu máquina local o descarga el archivo `main.ts`.
-2. Abre una terminal y navega hasta la ubicación del archivo `main.ts`.
-3. Instala TypeScript globalmente si aún no lo has hecho ejecutando el siguiente comando:
+Sigue estos pasos para ejecutar el código en tu terminal:
 
-   ```bash
-   npm i -g typescript
-   ```
+1. **Clona el Repositorio o Descarga el Archivo:**
 
-4. Compila el archivo TypeScript utilizando el compilador de TypeScript con el siguiente comando:
+   - Clona este repositorio en tu máquina local utilizando el comando `git clone <url-del-repositorio>` o descarga el archivo `main.ts` desde el repositorio.
 
-   ```bash
-   tsc main.ts
-   ```
+2. **Navega a la Ubicación del Archivo:**
 
-Esto generará un archivo `main.js` en el mismo directorio. 5. Ahora, puedes ejecutar el archivo JavaScript generado con Node.js utilizando el siguiente comando:
+   - Abre una terminal y navega hasta la ubicación del archivo `main.ts` en tu sistema.
 
-```bash
-node main.js
-```
+3. **Instala TypeScript (si es necesario):**
 
-Esto ejecutará el código y verás la salida en la terminal.
+   - Si aún no has instalado TypeScript globalmente, ejecuta el siguiente comando en tu terminal para instalarlo:
+     ```
+     npm install -g typescript
+     ```
 
-## Detalles del Código
+4. **Compila el Código TypeScript:**
 
-- El código muestra ejemplos de polimorfismo de subtipos, polimorfismo paramétrico, polimorfismo ad hoc y polimorfismo de inclusión de interfaces en TypeScript.
-- Cada sección del código está etiquetada y comentada para facilitar la comprensión de los conceptos.
+   - Utiliza el compilador de TypeScript para compilar el archivo `main.ts`. Ejecuta el siguiente comando en tu terminal:
+     ```
+     tsc main.ts
+     ```
+     Esto generará un archivo `main.js` en el mismo directorio.
+
+5. **Ejecuta el Código JavaScript:**
+   - Ahora puedes ejecutar el archivo JavaScript generado con Node.js. Utiliza el siguiente comando en tu terminal:
+     ```
+     node main.js
+     ```
+     Esto ejecutará el código y verás la salida en la terminal.
 
 ¡Disfruta explorando el código!
