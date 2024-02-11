@@ -19,11 +19,11 @@ Sigue estos pasos para ejecutar el código en tu terminal:
 
 1. **Clona el Repositorio o Descarga el Archivo:**
 
-   - Clona este repositorio en tu máquina local utilizando el comando `git clone <url-del-repositorio>` o descarga el archivo `main.ts` desde el repositorio.
+   - Clona este repositorio en tu máquina local utilizando el comando `git clone <url-del-repositorio>` o descarga el archivo `polimorfismo.ts` desde el repositorio.
 
 2. **Navega a la Ubicación del Archivo:**
 
-   - Abre una terminal y navega hasta la ubicación del archivo `main.ts` en tu sistema.
+   - Abre una terminal y navega hasta la ubicación del archivo `polimorfismo.ts` en tu sistema.
 
 3. **Instala TypeScript (si es necesario):**
 
@@ -34,16 +34,16 @@ Sigue estos pasos para ejecutar el código en tu terminal:
 
 4. **Compila el Código TypeScript:**
 
-   - Utiliza el compilador de TypeScript para compilar el archivo `main.ts`. Ejecuta el siguiente comando en tu terminal:
+   - Utiliza el compilador de TypeScript para compilar el archivo `polimorfismo.ts`. Ejecuta el siguiente comando en tu terminal:
      ```
-     tsc main.ts
+     tsc polimorfismo.ts
      ```
-     Esto generará un archivo `main.js` en el mismo directorio.
+     Esto generará un archivo `polimorfismo.js` en el mismo directorio.
 
 5. **Ejecuta el Código JavaScript:**
    - Ahora puedes ejecutar el archivo JavaScript generado con Node.js. Utiliza el siguiente comando en tu terminal:
      ```
-     node main.js
+     node polimorfismo.js
      ```
      Esto ejecutará el código y verás la salida en la terminal.
 
