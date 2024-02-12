@@ -37,7 +37,7 @@ function printElements<T>(elements: T[]): void {
 }
 
 // We create some arrays of different types
-const tasks: string[] = ["Buy groceries", "Call the doctor", "Send an email"];
+const tasks: string[] = ["Buy food", "Call the doctor", "Send an email"];
 const numbers: number[] = [1, 2, 3, 4, 5];
 
 // We call the printElements function with different types of arrays
